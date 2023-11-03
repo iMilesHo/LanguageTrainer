@@ -5,47 +5,52 @@
 import SwiftUI
 
 struct DetailView: View {
-    @Binding var scrum: DailyScrum
-    @State private var editingScrum = DailyScrum.emptyScrum
+    @Binding var topic: EnglishPracticeTopic
+    @State private var editingTopic = EnglishPracticeTopic.emptyTopic
 
     @State private var isPresentingEditView = false
     
     var body: some View {
         List {
-            Section(header: Text("Meeting Info")) {
-                NavigationLink(destination: MeetingView(scrum: $scrum)) {
-                    Label("Start Meeting", systemImage: "timer")
-                        .font(.headline)
-                        .foregroundColor(.accentColor)
+            Section(header: Text("Topic Info")) {
+                HStack {
+                    Label("Topic Name", systemImage: "quote.bubble")
+                    Spacer()
+                    Text("\(topic.topic)")
                 }
                 HStack {
                     Label("Length", systemImage: "clock")
                     Spacer()
-                    Text("\(scrum.lengthInMinutes) minutes")
+                    Text("\(topic.lengthInMinutes) minutes")
                 }
                 .accessibilityElement(children: .combine)
                 HStack {
                     Label("Theme", systemImage: "paintpalette")
                     Spacer()
-                    Text(scrum.theme.name)
+                    Text(topic.theme.name)
                         .padding(4)
-                        .foregroundColor(scrum.theme.accentColor)
-                        .background(scrum.theme.mainColor)
+                        .foregroundColor(topic.theme.accentColor)
+                        .background(topic.theme.mainColor)
                         .cornerRadius(4)
                 }
                 .accessibilityElement(children: .combine)
             }
-            Section(header: Text("Attendees")) {
-                ForEach(scrum.attendees) { attendee in
-                    Label(attendee.name, systemImage: "person")
-                }
+            Section(header: Text("Topic Content")) {
+                TextEditor(text: $topic.topicContent)
+                    .frame(height: 200)
+                    .padding(.vertical, 4)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 8)
+                            .stroke(topic.theme.mainColor, lineWidth: 1)
+                    )
+//                    .disabled(true)
             }
             Section(header: Text("History")) {
-                if scrum.history.isEmpty {
+                if topic.recordeHistory.isEmpty {
                     Label("No meetings yet", systemImage: "calendar.badge.exclamationmark")
                 }
-                ForEach(scrum.history) { history in
-                    NavigationLink(destination: HistoryView(history: history)) {
+                ForEach(topic.recordeHistory) { history in
+                    NavigationLink(destination: RecordingHistoryView(history: history)) {
                         HStack {
                             Image(systemName: "calendar")
                             Text(history.date, style: .date)
@@ -54,17 +59,17 @@ struct DetailView: View {
                 }
             }
         }
-        .navigationTitle(scrum.title)
+        .navigationTitle(topic.topic)
         .toolbar {
             Button("Edit") {
                 isPresentingEditView = true
-                editingScrum = scrum
+                editingTopic = topic
             }
         }
         .sheet(isPresented: $isPresentingEditView) {
             NavigationStack {
-                DetailEditView(scrum: $editingScrum)
-                    .navigationTitle(scrum.title)
+                DetailEditView(topic: $editingTopic)
+                    .navigationTitle(topic.topic)
                     .toolbar {
                         ToolbarItem(placement: .cancellationAction) {
                             Button("Cancel") {
@@ -74,7 +79,7 @@ struct DetailView: View {
                         ToolbarItem(placement: .confirmationAction) {
                             Button("Done") {
                                 isPresentingEditView = false
-                                scrum = editingScrum
+                                topic = editingTopic
                             }
                         }
                     }
@@ -86,7 +91,7 @@ struct DetailView: View {
 struct DetailView_Previews: PreviewProvider {
     static var previews: some View {
         NavigationStack {
-            DetailView(scrum: .constant(DailyScrum.sampleData[0]))
+            DetailView(topic: .constant(EnglishPracticeTopic.sampleData[0]))
         }
     }
 }

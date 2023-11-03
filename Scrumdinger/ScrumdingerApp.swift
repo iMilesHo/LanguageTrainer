@@ -5,16 +5,16 @@
 import SwiftUI
 
 @main
-struct ScrumdingerApp: App {
-    @StateObject private var store = ScrumStore()
+struct EnglishPracticeApp: App {
+    @StateObject private var store = EnglishTopicStore()
     @State private var errorWrapper: ErrorWrapper?
-
+    
     var body: some Scene {
         WindowGroup {
-            ScrumsView(scrums: $store.scrums) {
+            SpeakingTestMainView(englishPracticeTopics: $store.topics){
                 Task {
                     do {
-                        try await store.save(scrums: store.scrums)
+                        try await store.save(topics: store.topics)
                     } catch {
                         errorWrapper = ErrorWrapper(error: error,
                                                     guidance: "Try again later.")
@@ -23,6 +23,7 @@ struct ScrumdingerApp: App {
             }
             .task {
                 do {
+                    try await store.save(topics: store.topics)
                     try await store.load()
                 } catch {
                     errorWrapper = ErrorWrapper(error: error,
@@ -30,7 +31,7 @@ struct ScrumdingerApp: App {
                 }
             }
             .sheet(item: $errorWrapper) {
-                store.scrums = DailyScrum.sampleData
+                store.topics = EnglishPracticeTopic.sampleData
             } content: { wrapper in
                 ErrorView(errorWrapper: wrapper)
             }

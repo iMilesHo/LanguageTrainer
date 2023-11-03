@@ -5,52 +5,49 @@
 import SwiftUI
 
 struct DetailEditView: View {
-    @Binding var scrum: DailyScrum
+    @Binding var topic: EnglishPracticeTopic
     @State private var newAttendeeName = ""
-
+    @State private var canEdit = true
+    
     var body: some View {
-        Form {
-            Section(header: Text("Meeting Info")) {
-                TextField("Title", text: $scrum.title)
-                HStack {
-                    Slider(value: $scrum.lengthInMinutesAsDouble, in: 5...30, step: 1) {
-                        Text("Length")
-                    }
-                    .accessibilityValue("\(scrum.lengthInMinutes) minutes")
-                    Spacer()
-                    Text("\(scrum.lengthInMinutes) minutes")
-                        .accessibilityHidden(true)
-                }
-                ThemePicker(selection: $scrum.theme)
-            }
-            Section(header: Text("Attendees")) {
-                ForEach(scrum.attendees) { attendee in
-                    Text(attendee.name)
-                }
-                .onDelete { indices in
-                    scrum.attendees.remove(atOffsets: indices)
-                }
-                HStack {
-                    TextField("New Attendee", text: $newAttendeeName)
-                    Button(action: {
-                        withAnimation {
-                            let attendee = DailyScrum.Attendee(name: newAttendeeName)
-                            scrum.attendees.append(attendee)
-                            newAttendeeName = ""
+        VStack{
+            Form {
+                Section(header: Text("Topic Info")) {
+                    TextField("Topic", text: $topic.topic)
+                        .disabled(!canEdit)
+                    HStack {
+                        Slider(value: $topic.lengthInMinutesAsDouble, in: 0...30, step: 1) {
+                            Text("Length")
                         }
-                    }) {
-                        Image(systemName: "plus.circle.fill")
-                            .accessibilityLabel("Add attendee")
+                        .disabled(!canEdit)
+                        .accessibilityValue("\(topic.lengthInMinutes) minutes")
+                        Spacer()
+                        Text("\(topic.lengthInMinutes) minutes")
+                            .accessibilityHidden(true)
                     }
-                    .disabled(newAttendeeName.isEmpty)
+                    ThemePicker(selection: $topic.theme)
+                        .disabled(!canEdit)
+                }
+                Section(header: Text("Topic Content")) {
+                    TextEditor(text: $topic.topicContent)
+                        .frame(height: 400)
+                        .padding(.vertical, 4)
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 8)
+                                .stroke(topic.theme.mainColor, lineWidth: 1)
+                        )
+                        .disabled(!canEdit)
                 }
             }
+            
+            Spacer()
         }
+        
     }
 }
 
 struct DetailEditView_Previews: PreviewProvider {
     static var previews: some View {
-        DetailEditView(scrum: .constant(DailyScrum.sampleData[0]))
+        DetailEditView(topic: .constant(EnglishPracticeTopic.sampleData[0]))
     }
 }

@@ -4,32 +4,34 @@
 
 import SwiftUI
 
-struct ScrumsView: View {
-    @Binding var scrums: [DailyScrum]
+
+
+struct TopicsView: View {
+    @Binding var topics: [EnglishPracticeTopic]
     @Environment(\.scenePhase) private var scenePhase
-    @State private var isPresentingNewScrumView = false
+    @State private var isPresentingNewTopicView = false
     let saveAction: ()->Void
 
     var body: some View {
         NavigationStack {
-            List($scrums) { $scrum in
-                NavigationLink(destination: DetailView(scrum: $scrum)) {
-                    CardView(scrum: scrum)
+            List($topics) { $topic in
+                NavigationLink(destination: DetailView(topic: $topic)) {
+                    CardView(topic: topic)
                 }
-                .listRowBackground(scrum.theme.mainColor)
+                .listRowBackground(topic.theme.mainColor)
             }
-            .navigationTitle("Daily Scrums")
+            .navigationTitle("Daily topics")
             .toolbar {
                 Button(action: {
-                    isPresentingNewScrumView = true
+                    isPresentingNewTopicView = true
                 }) {
                     Image(systemName: "plus")
                 }
-                .accessibilityLabel("New Scrum")
+                .accessibilityLabel("New Topic")
             }
         }
-        .sheet(isPresented: $isPresentingNewScrumView) {
-            NewScrumSheet(scrums: $scrums, isPresentingNewScrumView: $isPresentingNewScrumView)
+        .sheet(isPresented: $isPresentingNewTopicView) {
+            NewTopicSheet(topics: $topics, isPresentingNewScrumView: $isPresentingNewTopicView)
         }
         .onChange(of: scenePhase) { phase in
             if phase == .inactive { saveAction() }
@@ -37,8 +39,9 @@ struct ScrumsView: View {
     }
 }
 
+
 struct ScrumsView_Previews: PreviewProvider {
     static var previews: some View {
-        ScrumsView(scrums: .constant(DailyScrum.sampleData), saveAction: {})
+        TopicsView(topics: .constant(EnglishPracticeTopic.sampleData), saveAction: {})
     }
 }

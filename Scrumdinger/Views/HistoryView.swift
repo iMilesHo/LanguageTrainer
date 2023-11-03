@@ -4,17 +4,17 @@
 
 import SwiftUI
 
-struct HistoryView: View {
-    let history: History
+struct RecordingHistoryView: View {
+    let history: RecordingHistory
 
     var body: some View {
         ScrollView {
             VStack(alignment: .leading) {
                 Divider()
                     .padding(.bottom)
-                Text("Attendees")
+                Text("Topics")
                     .font(.headline)
-                Text(history.attendeeString)
+                Text(history.date.description)
                 if let transcript = history.transcript {
                     Text("Transcript")
                         .font(.headline)
@@ -28,23 +28,12 @@ struct HistoryView: View {
     }
 }
 
-extension History {
-    var attendeeString: String {
-        ListFormatter.localizedString(byJoining: attendees.map { $0.name })
-    }
-}
-
-struct HistoryView_Previews: PreviewProvider {
-    static var history: History {
-        History(attendees: [
-            DailyScrum.Attendee(name: "Jon"),
-            DailyScrum.Attendee(name: "Darla"),
-            DailyScrum.Attendee(name: "Luis")
-        ],
-                transcript: "Darla, would you like to start today? Sure, yesterday I reviewed Luis' PR and met with the design team to finalize the UI...")
+struct RecordingHistoryView_Previews: PreviewProvider {
+    static var history: RecordingHistory {
+        RecordingHistory(transcript: "abc abd abdb fakuhf adbkj fhakuhf fakhjfh")
     }
     
     static var previews: some View {
-        HistoryView(history: history)
+        RecordingHistoryView(history: history)
     }
 }

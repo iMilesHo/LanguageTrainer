@@ -26,11 +26,18 @@ actor SpeechRecognizer: ObservableObject {
     }
     
     @MainActor var transcript: String = ""
+    @MainActor var audioFilePathURL: URL? = nil
     
     private var audioEngine: AVAudioEngine?
     private var request: SFSpeechAudioBufferRecognitionRequest?
     private var task: SFSpeechRecognitionTask?
     private let recognizer: SFSpeechRecognizer?
+    private var audioFile: AVAudioFile?
+    private static var recordingsDirectory: URL {
+        let fileManager = FileManager.default
+        let documentDirectory = try! fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+        return documentDirectory.appendingPathComponent("Recordings")
+    }
     
     /**
      Initializes a new speech recognizer. If this is the first time you've used the class, it
@@ -88,11 +95,12 @@ actor SpeechRecognizer: ObservableObject {
         }
         
         do {
-            let (audioEngine, request) = try Self.prepareEngine()
+            let (audioEngine, request, audioFile) = try Self.prepareEngine()
             self.audioEngine = audioEngine
             self.request = request
+            self.audioFile = audioFile
             self.task = recognizer.recognitionTask(with: request, resultHandler: { [weak self] result, error in
-                self?.recognitionHandler(audioEngine: audioEngine, result: result, error: error)
+                self?.recognitionHandler(audioEngine: audioEngine, result: result, audioFilePathURL: audioFile.url, error: error)
             })
         } catch {
             self.reset()
@@ -107,9 +115,10 @@ actor SpeechRecognizer: ObservableObject {
         audioEngine = nil
         request = nil
         task = nil
+        audioFile = nil
     }
     
-    private static func prepareEngine() throws -> (AVAudioEngine, SFSpeechAudioBufferRecognitionRequest) {
+    private static func prepareEngine() throws -> (AVAudioEngine, SFSpeechAudioBufferRecognitionRequest, AVAudioFile) {
         let audioEngine = AVAudioEngine()
         
         let request = SFSpeechAudioBufferRecognitionRequest()
@@ -121,16 +130,34 @@ actor SpeechRecognizer: ObservableObject {
         let inputNode = audioEngine.inputNode
         
         let recordingFormat = inputNode.outputFormat(forBus: 0)
+        
+        // Create recordings directory if it doesn't exist
+        let recordingsDirectory = self.recordingsDirectory
+        if !FileManager.default.fileExists(atPath: recordingsDirectory.path) {
+            try FileManager.default.createDirectory(at: recordingsDirectory, withIntermediateDirectories: true)
+        }
+        
+        // Create an audio file in the recordings directory
+        let audioFilename = "\(UUID().uuidString).caf"
+        let audioFile = try AVAudioFile(forWriting: recordingsDirectory.appendingPathComponent(audioFilename), settings: audioEngine.inputNode.outputFormat(forBus: 0).settings)
+        
+        
         inputNode.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { (buffer: AVAudioPCMBuffer, when: AVAudioTime) in
             request.append(buffer)
+            do {
+                try audioFile.write(from: buffer)
+            } catch {
+                // Handle the error properly
+                print("Error writing audio file: \(error)")
+            }
         }
         audioEngine.prepare()
         try audioEngine.start()
         
-        return (audioEngine, request)
+        return (audioEngine, request, audioFile)
     }
     
-    nonisolated private func recognitionHandler(audioEngine: AVAudioEngine, result: SFSpeechRecognitionResult?, error: Error?) {
+    nonisolated private func recognitionHandler(audioEngine: AVAudioEngine, result: SFSpeechRecognitionResult?, audioFilePathURL: URL?, error: Error?) {
         let receivedFinalResult = result?.isFinal ?? false
         let receivedError = error != nil
         
@@ -139,15 +166,16 @@ actor SpeechRecognizer: ObservableObject {
             audioEngine.inputNode.removeTap(onBus: 0)
         }
         
-        if let result {
-            transcribe(result.bestTranscription.formattedString)
+        if let result, let audioFilePathURL {
+            transcribe(result.bestTranscription.formattedString, audioFilePathURL)
         }
     }
     
     
-    nonisolated private func transcribe(_ message: String) {
+    nonisolated private func transcribe(_ message: String,_ pathURL: URL) {
         Task { @MainActor in
             transcript = message
+            audioFilePathURL = pathURL
         }
     }
     nonisolated private func transcribe(_ error: Error) {

@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		92FD9A592AF40C2D007B1776 /* SpeakingTestMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FD9A582AF40C2D007B1776 /* SpeakingTestMainView.swift */; };
+		92FD9A5C2AF48BB3007B1776 /* EnglishPracticeTopic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FD9A5B2AF48BB3007B1776 /* EnglishPracticeTopic.swift */; };
 		A93E3F39294A6F3400B9708D /* ScrumProgressViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93E3F38294A6F3400B9708D /* ScrumProgressViewStyle.swift */; };
 		A93E3F3B294A6F4200B9708D /* ScrumTimer.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93E3F3A294A6F4200B9708D /* ScrumTimer.swift */; };
 		A93E3F3D294A716700B9708D /* MeetingHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93E3F3C294A715B00B9708D /* MeetingHeaderView.swift */; };
@@ -39,6 +41,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		92FD9A582AF40C2D007B1776 /* SpeakingTestMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakingTestMainView.swift; sourceTree = "<group>"; };
+		92FD9A5B2AF48BB3007B1776 /* EnglishPracticeTopic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnglishPracticeTopic.swift; sourceTree = "<group>"; };
 		A93E3F38294A6F3400B9708D /* ScrumProgressViewStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrumProgressViewStyle.swift; sourceTree = "<group>"; };
 		A93E3F3A294A6F4200B9708D /* ScrumTimer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = ScrumTimer.swift; path = Scrumdinger/Models/ScrumTimer.swift; sourceTree = SOURCE_ROOT; };
 		A93E3F3C294A715B00B9708D /* MeetingHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MeetingHeaderView.swift; sourceTree = "<group>"; };
@@ -84,6 +88,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		92FD9A5A2AF40C37007B1776 /* SpeakingTestView */ = {
+			isa = PBXGroup;
+			children = (
+				92FD9A582AF40C2D007B1776 /* SpeakingTestMainView.swift */,
+			);
+			path = SpeakingTestView;
+			sourceTree = "<group>";
+		};
+		92FD9A5D2AF48BBB007B1776 /* EnglishPracticeModel */ = {
+			isa = PBXGroup;
+			children = (
+				92FD9A5B2AF48BB3007B1776 /* EnglishPracticeTopic.swift */,
+			);
+			path = EnglishPracticeModel;
+			sourceTree = "<group>";
+		};
 		A9789BAC2947DE3900305A2F /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -152,6 +172,8 @@
 		AAAE801E294793AB0099DABC /* Scrumdinger */ = {
 			isa = PBXGroup;
 			children = (
+				92FD9A5D2AF48BBB007B1776 /* EnglishPracticeModel */,
+				92FD9A5A2AF40C37007B1776 /* SpeakingTestView */,
 				A9789BAC2947DE3900305A2F /* Models */,
 				A9789BB32947E4F500305A2F /* Views */,
 				AAAE801F294793AB0099DABC /* ScrumdingerApp.swift */,
@@ -251,6 +273,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A93E3F41294A912B00B9708D /* History.swift in Sources */,
+				92FD9A592AF40C2D007B1776 /* SpeakingTestMainView.swift in Sources */,
 				A93E3F4D294D28C400B9708D /* HistoryView.swift in Sources */,
 				C76970AA29493621002748F5 /* ThemePicker.swift in Sources */,
 				A9789BB02947DF6300305A2F /* DailyScrum.swift in Sources */,
@@ -265,6 +288,7 @@
 				A93E3F43294D18F700B9708D /* ErrorWrapper.swift in Sources */,
 				A93E3F3D294A716700B9708D /* MeetingHeaderView.swift in Sources */,
 				C76970A02948F3A4002748F5 /* ScrumsView.swift in Sources */,
+				92FD9A5C2AF48BB3007B1776 /* EnglishPracticeTopic.swift in Sources */,
 				AAAE8022294793AB0099DABC /* MeetingView.swift in Sources */,
 				AA7F3039294A878E005E1E9F /* AVPlayer+Ding.swift in Sources */,
 				A93E3F4B294D224A00B9708D /* SpeechRecognizer.swift in Sources */,
@@ -420,7 +444,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.Scrumdinger";
+				PRODUCT_BUNDLE_IDENTIFIER = xyz.yuanlaihe.pitchTrainer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -451,7 +475,7 @@
 					"@executable_path/Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.Scrumdinger";
+				PRODUCT_BUNDLE_IDENTIFIER = xyz.yuanlaihe.pitchTrainer;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
