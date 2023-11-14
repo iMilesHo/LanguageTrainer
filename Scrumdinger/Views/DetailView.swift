@@ -7,7 +7,6 @@ import SwiftUI
 struct DetailView: View {
     @Binding var topic: EnglishPracticeTopic
     @State private var editingTopic = EnglishPracticeTopic.emptyTopic
-
     @State private var isPresentingEditView = false
     
     var body: some View {

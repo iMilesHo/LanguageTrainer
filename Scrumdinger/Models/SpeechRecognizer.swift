@@ -138,10 +138,14 @@ actor SpeechRecognizer: ObservableObject {
         }
         
         // Create an audio file in the recordings directory
-        let audioFilename = "\(UUID().uuidString).caf"
-        let audioFile = try AVAudioFile(forWriting: recordingsDirectory.appendingPathComponent(audioFilename), settings: audioEngine.inputNode.outputFormat(forBus: 0).settings)
-        
-        
+        let audioFilename = "\(UUID().uuidString).m4a"
+        let settings = [
+            AVFormatIDKey: kAudioFormatMPEG4AAC,
+            AVSampleRateKey: recordingFormat.sampleRate,
+            AVNumberOfChannelsKey: recordingFormat.channelCount
+        ] as [String : Any]
+        let audioFile = try AVAudioFile(forWriting: recordingsDirectory.appendingPathComponent(audioFilename), settings: settings)
+                
         inputNode.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { (buffer: AVAudioPCMBuffer, when: AVAudioTime) in
             request.append(buffer)
             do {

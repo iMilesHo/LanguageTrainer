@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		92CB280A2B041DD80099C645 /* PronunciationFeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CB28092B041DD80099C645 /* PronunciationFeedbackView.swift */; };
 		92FD9A592AF40C2D007B1776 /* SpeakingTestMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FD9A582AF40C2D007B1776 /* SpeakingTestMainView.swift */; };
 		92FD9A5C2AF48BB3007B1776 /* EnglishPracticeTopic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FD9A5B2AF48BB3007B1776 /* EnglishPracticeTopic.swift */; };
 		A93E3F39294A6F3400B9708D /* ScrumProgressViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93E3F38294A6F3400B9708D /* ScrumProgressViewStyle.swift */; };
@@ -41,6 +42,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		92CB28092B041DD80099C645 /* PronunciationFeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PronunciationFeedbackView.swift; sourceTree = "<group>"; };
+		92CB280B2B0430610099C645 /* canadagooseAudio.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = canadagooseAudio.m4a; sourceTree = "<group>"; };
+		92CB280C2B0430610099C645 /* thegreatwallAudio.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = thegreatwallAudio.m4a; sourceTree = "<group>"; };
 		92FD9A582AF40C2D007B1776 /* SpeakingTestMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakingTestMainView.swift; sourceTree = "<group>"; };
 		92FD9A5B2AF48BB3007B1776 /* EnglishPracticeTopic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnglishPracticeTopic.swift; sourceTree = "<group>"; };
 		A93E3F38294A6F3400B9708D /* ScrumProgressViewStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrumProgressViewStyle.swift; sourceTree = "<group>"; };
@@ -92,6 +96,7 @@
 			isa = PBXGroup;
 			children = (
 				92FD9A582AF40C2D007B1776 /* SpeakingTestMainView.swift */,
+				92CB28092B041DD80099C645 /* PronunciationFeedbackView.swift */,
 			);
 			path = SpeakingTestView;
 			sourceTree = "<group>";
@@ -145,6 +150,8 @@
 		AA313BB429B69EDC00F4309A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				92CB280B2B0430610099C645 /* canadagooseAudio.m4a */,
+				92CB280C2B0430610099C645 /* thegreatwallAudio.m4a */,
 				AA313BB529B69F0A00F4309A /* ding.wav */,
 			);
 			path = Resources;
@@ -287,6 +294,7 @@
 				A9789BAE2947DE5100305A2F /* Theme.swift in Sources */,
 				A93E3F43294D18F700B9708D /* ErrorWrapper.swift in Sources */,
 				A93E3F3D294A716700B9708D /* MeetingHeaderView.swift in Sources */,
+				92CB280A2B041DD80099C645 /* PronunciationFeedbackView.swift in Sources */,
 				C76970A02948F3A4002748F5 /* ScrumsView.swift in Sources */,
 				92FD9A5C2AF48BB3007B1776 /* EnglishPracticeTopic.swift in Sources */,
 				AAAE8022294793AB0099DABC /* MeetingView.swift in Sources */,

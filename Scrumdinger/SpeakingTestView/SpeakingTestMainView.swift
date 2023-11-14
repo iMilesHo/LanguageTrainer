@@ -21,6 +21,8 @@ struct ReadingPracticeView: View {
     let textToRead: String // The text that the user will read aloud
     @Binding var isRecording: Bool
     private let maxHeight: CGFloat = 500 // Maximum height for the scroll view
+    var playAction: (_ isPlaying: Bool) -> Void // 用于播放音频的动作
+    @State private var isPlaying: Bool = false // 追踪播放状态
     
     var body: some View {
         ZStack(alignment: .bottom) {
@@ -33,6 +35,15 @@ struct ReadingPracticeView: View {
             ScrollIndicatorView()
                 .padding(.top, 8)
                 .padding(.bottom, 8)
+            HStack{
+                Spacer()
+                PlayButtonView(isPlaying: isPlaying, action: {
+                    isPlaying.toggle()
+                    playAction(isPlaying)
+                })
+                .padding(.horizontal, 8)
+                .padding(.vertical, 8)
+            }
         }
         .overlay(
             RoundedRectangle(cornerRadius: 12)
@@ -54,7 +65,20 @@ struct ScrollIndicatorView: View {
     }
 }
 
+struct PlayButtonView: View {
+    var isPlaying: Bool
+    var action: () -> Void
 
+    var body: some View {
+        Button(action: action) {
+            Image(systemName: isPlaying ? "stop.circle" : "play.circle")
+                .resizable()
+                .aspectRatio(contentMode: .fit)
+                .frame(width: 40, height: 40)
+                .foregroundColor(.blue)
+        }
+    }
+}
 
 
 struct SpeakingTestMainView: View {
@@ -67,6 +91,8 @@ struct SpeakingTestMainView: View {
     @State private var showingHistory = false
     @State private var showingTopicInfo = false
     @State private var addingNewTopic = false
+    @State private var audioPlayer: AVAudioPlayer?
+    @State private var showingFeedback = false
     private var player: AVPlayer { AVPlayer.sharedDingPlayer }
     let saveAction: ()->Void
     
@@ -80,7 +106,14 @@ struct SpeakingTestMainView: View {
 //                    .padding(.top, 8)
                 MeetingHeaderView(secondsElapsed: speakingTimer.secondsElapsed, secondsRemaining: speakingTimer.secondsRemaining, theme: englishPracticeTopics[0].theme)
                     .padding(.bottom, 16)
-                ReadingPracticeView(textToRead: englishPracticeTopics[0].topicContent, isRecording: $isRecording)
+                ReadingPracticeView(textToRead: englishPracticeTopics[0].topicContent, isRecording: $isRecording, playAction:{isPlaying in 
+                    if isPlaying {
+                        playModelAudio()
+                    } else {
+                        audioPlayer?.stop()
+                    }
+                    
+                })
                     .padding(.horizontal,8)
                 RecordingButtonView(
                     recordingState: $recordingState,
@@ -143,11 +176,17 @@ struct SpeakingTestMainView: View {
             }
         }
         .sheet(isPresented: $showingTopicInfo) {
-            DetailView(topic: $englishPracticeTopics[0])
-//            NewTopicSheet(topics: $englishPracticeTopics, isPresentingNewScrumView: $showingTopicInfo)
+            if !englishPracticeTopics.isEmpty {
+                NavigationStack {
+                    DetailView(topic: $englishPracticeTopics[0])
+                }
+            }
         }
         .sheet(isPresented: $addingNewTopic) {
             NewTopicSheet(topics: $englishPracticeTopics, isPresentingNewScrumView: $addingNewTopic)
+        }
+        .sheet(isPresented: $showingFeedback) {
+            PronunciationFeedbackView(score: 80, feedback: ["The Great Wall of China, ", "a marvel of engineering stretching over"], isPresentingView: $showingFeedback)
         }
         }
         .onDisappear {
@@ -194,6 +233,7 @@ struct SpeakingTestMainView: View {
     private func stopPlaying() {
         recordingState = .finishedRecording
         // 停止播放录音的逻辑
+        audioPlayer?.stop()
     }
     
     private func uploadRecording() {
@@ -202,6 +242,7 @@ struct SpeakingTestMainView: View {
         // 假设上传是一个异步的过程，这里是模拟上传完成后的回调
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
             recordingState = .uploaded
+            showingFeedback = true
         }
     }
     
@@ -210,11 +251,27 @@ struct SpeakingTestMainView: View {
             guard let audioFileURL = englishPracticeTopics[0].recordeHistory[0].audioFilePathURL else {
                 return
             }
-            var audioPlayer: AVAudioPlayer?
             audioPlayer = try AVAudioPlayer(contentsOf: audioFileURL)
             audioPlayer?.play()
         } catch {
             // Handle the error of audio playback
+            print("播放音频失败: \(error.localizedDescription)")
+        }
+    }
+    
+    private func playModelAudio() {
+        do {
+            let modelAudioFileName = englishPracticeTopics[0].modelAudioFileName
+            let modelAudioFilePath = EnglishPracticeTopic.modelAudioFilePath
+            if !FileManager.default.fileExists(atPath: modelAudioFilePath.path) {
+                try FileManager.default.createDirectory(at: modelAudioFilePath, withIntermediateDirectories: true)
+            }
+            let fullPath = modelAudioFilePath.appendingPathComponent(modelAudioFileName)
+            audioPlayer = try AVAudioPlayer(contentsOf: fullPath)
+            audioPlayer?.play()
+        } catch {
+            // Handle the error of audio playback
+            print("播放音频失败: \(error.localizedDescription)")
         }
     }
 }

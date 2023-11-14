@@ -14,8 +14,8 @@
             filePath = "Scrumdinger/Views/DetailView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "14"
-            endingLineNumber = "14"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
             landmarkName = "body"
             landmarkType = "24">
             <Locations>
@@ -62,8 +62,8 @@
             filePath = "Scrumdinger/Models/SpeechRecognizer.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "142"
-            endingLineNumber = "142"
+            startingLineNumber = "147"
+            endingLineNumber = "147"
             landmarkName = "prepareEngine()"
             landmarkType = "7">
          </BreakpointContent>
@@ -71,47 +71,77 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "2D0CFC51-47EE-4E71-A6AB-EB773CF951CC"
-            shouldBeEnabled = "Yes"
+            uuid = "068B7270-5A2D-4B00-B008-8E0A4755DB22"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Scrumdinger/Models/ScrumTimer.swift"
+            filePath = "Scrumdinger/ScrumdingerApp.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "57"
-            endingLineNumber = "57"
-            landmarkName = "update()"
-            landmarkType = "7">
+            startingLineNumber = "26"
+            endingLineNumber = "26"
+            landmarkName = "body"
+            landmarkType = "24">
             <Locations>
                <Location
-                  uuid = "2D0CFC51-47EE-4E71-A6AB-EB773CF951CC - 9b8dc02d008d9f3d"
+                  uuid = "068B7270-5A2D-4B00-B008-8E0A4755DB22 - 46e173b1ee4ab027"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for closure #1 @Swift.MainActor @Sendable () async -&gt; () in Scrumdinger.EnglishSpeakingTimer.update() -&gt; ()"
+                  symbolName = "(1) suspend resume partial function for closure #2 @Sendable () async -&gt; () in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.sheet&lt;&#x3c4;_0_0, &#x3c4;_0_1 where &#x3c4;_1_0: Swift.Identifiable, &#x3c4;_1_1: SwiftUI.View&gt;(item: SwiftUI.Binding&lt;Swift.Optional&lt;&#x3c4;_1_0&gt;&gt;, onDismiss: Swift.Optional&lt;() -&gt; ()&gt;, content: (&#x3c4;_1_0) -&gt; &#x3c4;_1_1) -&gt; some&gt;&gt;.0 in Scrumdinger.EnglishPracticeApp.body.getter : some"
                   moduleName = "Scrumdinger"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yuanlaihe/MyWorkSpace/PitvhTrainer001/Scrumdinger/Models/ScrumTimer.swift"
+                  urlString = "file:///Users/yuanlaihe/MyWorkSpace/PitchTrainer/Scrumdinger/ScrumdingerApp.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "57"
-                  endingLineNumber = "57"
-                  offsetFromSymbolStart = "331">
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "82">
                </Location>
                <Location
-                  uuid = "2D0CFC51-47EE-4E71-A6AB-EB773CF951CC - 9b8dc02d008d9f3d"
+                  uuid = "068B7270-5A2D-4B00-B008-8E0A4755DB22 - 6808ca0d41edfa3d"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for closure #1 @Swift.MainActor @Sendable () async -&gt; () in Scrumdinger.EnglishSpeakingTimer.update() -&gt; ()"
+                  symbolName = "(2) await resume partial function for closure #2 @Sendable () async -&gt; () in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.sheet&lt;&#x3c4;_0_0, &#x3c4;_0_1 where &#x3c4;_1_0: Swift.Identifiable, &#x3c4;_1_1: SwiftUI.View&gt;(item: SwiftUI.Binding&lt;Swift.Optional&lt;&#x3c4;_1_0&gt;&gt;, onDismiss: Swift.Optional&lt;() -&gt; ()&gt;, content: (&#x3c4;_1_0) -&gt; &#x3c4;_1_1) -&gt; some&gt;&gt;.0 in Scrumdinger.EnglishPracticeApp.body.getter : some"
                   moduleName = "Scrumdinger"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yuanlaihe/MyWorkSpace/PitvhTrainer001/Scrumdinger/Models/ScrumTimer.swift"
+                  urlString = "file:///Users/yuanlaihe/MyWorkSpace/PitchTrainer/Scrumdinger/ScrumdingerApp.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "57"
-                  endingLineNumber = "57"
-                  offsetFromSymbolStart = "1246">
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "41">
+               </Location>
+               <Location
+                  uuid = "068B7270-5A2D-4B00-B008-8E0A4755DB22 - a4faeb546bb07421"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for closure #2 @Sendable () async -&gt; () in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.sheet&lt;&#x3c4;_0_0, &#x3c4;_0_1 where &#x3c4;_1_0: Swift.Identifiable, &#x3c4;_1_1: SwiftUI.View&gt;(item: SwiftUI.Binding&lt;Swift.Optional&lt;&#x3c4;_1_0&gt;&gt;, onDismiss: Swift.Optional&lt;() -&gt; ()&gt;, content: (&#x3c4;_1_0) -&gt; &#x3c4;_1_1) -&gt; some&gt;&gt;.0 in Scrumdinger.EnglishPracticeApp.body.getter : some"
+                  moduleName = "Scrumdinger"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yuanlaihe/MyWorkSpace/PitchTrainer/Scrumdinger/ScrumdingerApp.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "31">
+               </Location>
+               <Location
+                  uuid = "068B7270-5A2D-4B00-B008-8E0A4755DB22 - 29d5f77e90eb8e22"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(6) suspend resume partial function for closure #2 @Sendable () async -&gt; () in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.sheet&lt;&#x3c4;_0_0, &#x3c4;_0_1 where &#x3c4;_1_0: Swift.Identifiable, &#x3c4;_1_1: SwiftUI.View&gt;(item: SwiftUI.Binding&lt;Swift.Optional&lt;&#x3c4;_1_0&gt;&gt;, onDismiss: Swift.Optional&lt;() -&gt; ()&gt;, content: (&#x3c4;_1_0) -&gt; &#x3c4;_1_1) -&gt; some&gt;&gt;.0 in Scrumdinger.EnglishPracticeApp.body.getter : some"
+                  moduleName = "Scrumdinger"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yuanlaihe/MyWorkSpace/PitchTrainer/Scrumdinger/ScrumdingerApp.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "26"
+                  endingLineNumber = "26"
+                  offsetFromSymbolStart = "42">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -119,143 +149,113 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "65C0209B-7347-41A9-A214-A704CF527D75"
+            uuid = "09864F10-963A-4E07-A92E-C8C5663B8CD4"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Scrumdinger/Models/SpeechRecognizer.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "141"
+            endingLineNumber = "141"
+            landmarkName = "prepareEngine()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "09864F10-963A-4E07-A92E-C8C5663B8CD4 - 78e41f265a45cdda"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static Scrumdinger.SpeechRecognizer.prepareEngine() throws -&gt; (__C.AVAudioEngine, __C.SFSpeechAudioBufferRecognitionRequest, __C.AVAudioFile)"
+                  moduleName = "Scrumdinger"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yuanlaihe/MyWorkSpace/PitchTrainer/Scrumdinger/Models/SpeechRecognizer.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "141"
+                  endingLineNumber = "141"
+                  offsetFromSymbolStart = "1388">
+               </Location>
+               <Location
+                  uuid = "09864F10-963A-4E07-A92E-C8C5663B8CD4 - 78e41f265a45cdda"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "static Scrumdinger.SpeechRecognizer.prepareEngine() throws -&gt; (__C.AVAudioEngine, __C.SFSpeechAudioBufferRecognitionRequest, __C.AVAudioFile)"
+                  moduleName = "Scrumdinger"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yuanlaihe/MyWorkSpace/PitchTrainer/Scrumdinger/Models/SpeechRecognizer.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "141"
+                  endingLineNumber = "141"
+                  offsetFromSymbolStart = "1399">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "3EBEB602-7FF7-4529-9955-CC815307A49F"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Scrumdinger/SpeakingTestView/SpeakingTestMainView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "166"
-            endingLineNumber = "166"
-            landmarkName = "startScrum()"
+            startingLineNumber = "230"
+            endingLineNumber = "230"
+            landmarkName = "playRecording()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "281ABCCC-2996-4FD2-A37C-0267CAACE5F5"
+            uuid = "EB17D2B7-2872-4F87-965F-EAF2C925A709"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Scrumdinger/Models/ScrumTimer.swift"
+            filePath = "Scrumdinger/SpeakingTestView/SpeakingTestMainView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
-            landmarkName = "startSpeaking()"
+            startingLineNumber = "212"
+            endingLineNumber = "212"
+            landmarkName = "endScrum()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "281ABCCC-2996-4FD2-A37C-0267CAACE5F5 - 8974d06922f703be"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Sendable (__C.NSTimer) -&gt; () in Scrumdinger.EnglishSpeakingTimer.startSpeaking() -&gt; ()"
-                  moduleName = "Scrumdinger"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yuanlaihe/MyWorkSpace/PitvhTrainer001/Scrumdinger/Models/ScrumTimer.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "43"
-                  endingLineNumber = "43"
-                  offsetFromSymbolStart = "187">
-               </Location>
-               <Location
-                  uuid = "281ABCCC-2996-4FD2-A37C-0267CAACE5F5 - 8974d06922f703be"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Sendable (__C.NSTimer) -&gt; () in Scrumdinger.EnglishSpeakingTimer.startSpeaking() -&gt; ()"
-                  moduleName = "Scrumdinger"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yuanlaihe/MyWorkSpace/PitvhTrainer001/Scrumdinger/Models/ScrumTimer.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "43"
-                  endingLineNumber = "43"
-                  offsetFromSymbolStart = "74">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "A7CDBB76-021D-4CCA-9443-6ECFCB3D13C9"
+            uuid = "8DA68D73-63F0-4345-AEE1-EE5B1EC834DB"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Scrumdinger/Models/ScrumTimer.swift"
+            filePath = "Scrumdinger/SpeakingTestView/SpeakingTestMainView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "56"
-            endingLineNumber = "56"
-            landmarkName = "update()"
+            startingLineNumber = "224"
+            endingLineNumber = "224"
+            landmarkName = "stopRecording()"
             landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "A7CDBB76-021D-4CCA-9443-6ECFCB3D13C9 - 9b8dc02d008d9f5e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for closure #1 @Swift.MainActor @Sendable () async -&gt; () in Scrumdinger.EnglishSpeakingTimer.update() -&gt; ()"
-                  moduleName = "Scrumdinger"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yuanlaihe/MyWorkSpace/PitvhTrainer001/Scrumdinger/Models/ScrumTimer.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "56"
-                  endingLineNumber = "56"
-                  offsetFromSymbolStart = "1246">
-               </Location>
-               <Location
-                  uuid = "A7CDBB76-021D-4CCA-9443-6ECFCB3D13C9 - 2da072aec3c73360"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Scrumdinger.EnglishSpeakingTimer.update() -&gt; ()"
-                  moduleName = "Scrumdinger"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yuanlaihe/MyWorkSpace/PitvhTrainer001/Scrumdinger/Models/ScrumTimer.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "56"
-                  endingLineNumber = "56"
-                  offsetFromSymbolStart = "65">
-               </Location>
-               <Location
-                  uuid = "A7CDBB76-021D-4CCA-9443-6ECFCB3D13C9 - fce6ebc4472201d5"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 @Swift.MainActor @Sendable () async -&gt; () in Scrumdinger.EnglishSpeakingTimer.update() -&gt; ()"
-                  moduleName = "Scrumdinger"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yuanlaihe/MyWorkSpace/PitvhTrainer001/Scrumdinger/Models/ScrumTimer.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "56"
-                  endingLineNumber = "56"
-                  offsetFromSymbolStart = "230">
-               </Location>
-               <Location
-                  uuid = "A7CDBB76-021D-4CCA-9443-6ECFCB3D13C9 - 9b8dc02d008d9f5e"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "(1) suspend resume partial function for closure #1 @Swift.MainActor @Sendable () async -&gt; () in Scrumdinger.EnglishSpeakingTimer.update() -&gt; ()"
-                  moduleName = "Scrumdinger"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yuanlaihe/MyWorkSpace/PitvhTrainer001/Scrumdinger/Models/ScrumTimer.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "56"
-                  endingLineNumber = "56"
-                  offsetFromSymbolStart = "104">
-               </Location>
-            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "AD786AC2-3D05-4BEC-BF51-09188EC3BEDE"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Scrumdinger/SpeakingTestView/SpeakingTestMainView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "115"
+            endingLineNumber = "115"
+            landmarkName = "body"
+            landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
    </Breakpoints>

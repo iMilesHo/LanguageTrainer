@@ -22,24 +22,31 @@ struct EnglishPracticeTopic: Identifiable, Codable   {
     }
     var theme: Theme
     var recordeHistory: [RecordingHistory] = []
+    static var modelAudioFilePath: URL {
+        let fileManager = FileManager.default
+        let documentDirectory = try! fileManager.url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
+        return documentDirectory.appendingPathComponent("ModelAudio")
+    }
+    var modelAudioFileName: String
     
-    init(id: String = "\(UUID())", topic: String, topicContent: String, lengthInMinutes: Int, theme: Theme) {
+    init(id: String = "\(UUID())", topic: String, topicContent: String, lengthInMinutes: Int, theme: Theme, modelAudioFileName: String) {
         self.id = id
         self.topic = topic
         self.topicContent = topicContent
         self.lengthInMinutes = lengthInMinutes
         self.theme = theme
+        self.modelAudioFileName = modelAudioFileName
     }
     
     static var emptyTopic: EnglishPracticeTopic {
-        EnglishPracticeTopic(topic: "", topicContent: "...", lengthInMinutes: 0, theme: .sky)
+        EnglishPracticeTopic(topic: "", topicContent: "...", lengthInMinutes: 0, theme: .sky, modelAudioFileName: "")
     }
 }
 
 extension EnglishPracticeTopic {
     static let sampleData: [EnglishPracticeTopic] = [
-        EnglishPracticeTopic(id: "20231102thegreatwall", topic: "The Great Wall", topicContent: readingMaterials, lengthInMinutes: 3, theme: .orange),
-        EnglishPracticeTopic(id: "20231102canadagoose", topic: "Canada Goose", topicContent: readingMaterials, lengthInMinutes: 3, theme: .poppy)
+        EnglishPracticeTopic(id: "20231102thegreatwall", topic: "The Great Wall", topicContent: readingMaterials, lengthInMinutes: 3, theme: .orange, modelAudioFileName: "thegreatwallAudio.m4a"),
+        EnglishPracticeTopic(id: "20231102canadagoose", topic: "Canada Goose", topicContent: readingMaterials, lengthInMinutes: 3, theme: .poppy, modelAudioFileName: "canadagooseAudio.m4a")
     ]
 }
 
