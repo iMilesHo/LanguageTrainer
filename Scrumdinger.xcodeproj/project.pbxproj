@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		92CB280A2B041DD80099C645 /* PronunciationFeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CB28092B041DD80099C645 /* PronunciationFeedbackView.swift */; };
+		92DB45ED2B0ADA630059E16F /* thegreatwallAudio.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 92DB45EC2B0ADA630059E16F /* thegreatwallAudio.mp3 */; };
+		92DB45F82B0ADACF0059E16F /* thegreatwallAudio.wav in Resources */ = {isa = PBXBuildFile; fileRef = 92DB45F72B0ADACF0059E16F /* thegreatwallAudio.wav */; };
 		92FD9A592AF40C2D007B1776 /* SpeakingTestMainView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FD9A582AF40C2D007B1776 /* SpeakingTestMainView.swift */; };
 		92FD9A5C2AF48BB3007B1776 /* EnglishPracticeTopic.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92FD9A5B2AF48BB3007B1776 /* EnglishPracticeTopic.swift */; };
 		A93E3F39294A6F3400B9708D /* ScrumProgressViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = A93E3F38294A6F3400B9708D /* ScrumProgressViewStyle.swift */; };
@@ -43,8 +45,8 @@
 
 /* Begin PBXFileReference section */
 		92CB28092B041DD80099C645 /* PronunciationFeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PronunciationFeedbackView.swift; sourceTree = "<group>"; };
-		92CB280B2B0430610099C645 /* canadagooseAudio.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = canadagooseAudio.m4a; sourceTree = "<group>"; };
-		92CB280C2B0430610099C645 /* thegreatwallAudio.m4a */ = {isa = PBXFileReference; lastKnownFileType = file; path = thegreatwallAudio.m4a; sourceTree = "<group>"; };
+		92DB45EC2B0ADA630059E16F /* thegreatwallAudio.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = thegreatwallAudio.mp3; sourceTree = "<group>"; };
+		92DB45F72B0ADACF0059E16F /* thegreatwallAudio.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = thegreatwallAudio.wav; sourceTree = "<group>"; };
 		92FD9A582AF40C2D007B1776 /* SpeakingTestMainView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeakingTestMainView.swift; sourceTree = "<group>"; };
 		92FD9A5B2AF48BB3007B1776 /* EnglishPracticeTopic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnglishPracticeTopic.swift; sourceTree = "<group>"; };
 		A93E3F38294A6F3400B9708D /* ScrumProgressViewStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ScrumProgressViewStyle.swift; sourceTree = "<group>"; };
@@ -150,8 +152,8 @@
 		AA313BB429B69EDC00F4309A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				92CB280B2B0430610099C645 /* canadagooseAudio.m4a */,
-				92CB280C2B0430610099C645 /* thegreatwallAudio.m4a */,
+				92DB45F72B0ADACF0059E16F /* thegreatwallAudio.wav */,
+				92DB45EC2B0ADA630059E16F /* thegreatwallAudio.mp3 */,
 				AA313BB529B69F0A00F4309A /* ding.wav */,
 			);
 			path = Resources;
@@ -266,8 +268,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				AAAE8027294793AB0099DABC /* Preview Assets.xcassets in Resources */,
+				92DB45F82B0ADACF0059E16F /* thegreatwallAudio.wav in Resources */,
 				AAAE8031294795050099DABC /* SampleCode.xcconfig in Resources */,
 				AA313BB629B69F0A00F4309A /* ding.wav in Resources */,
+				92DB45ED2B0ADA630059E16F /* thegreatwallAudio.mp3 in Resources */,
 				AAAE8024294793AB0099DABC /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

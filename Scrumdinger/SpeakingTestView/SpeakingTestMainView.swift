@@ -267,7 +267,10 @@ struct SpeakingTestMainView: View {
                 try FileManager.default.createDirectory(at: modelAudioFilePath, withIntermediateDirectories: true)
             }
             let fullPath = modelAudioFilePath.appendingPathComponent(modelAudioFileName)
-            audioPlayer = try AVAudioPlayer(contentsOf: fullPath)
+            
+            // TODO: model audio test
+            guard let url = Bundle.main.url(forResource: "thegreatwallAudio", withExtension: "mp3") else { fatalError("Failed to find sound file.") }
+            audioPlayer = try AVAudioPlayer(contentsOf: url)
             audioPlayer?.play()
         } catch {
             // Handle the error of audio playback
