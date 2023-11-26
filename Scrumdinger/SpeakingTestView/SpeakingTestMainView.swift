@@ -102,8 +102,6 @@ struct SpeakingTestMainView: View {
             RoundedRectangle(cornerRadius: 16.0)
                 .fill(englishPracticeTopics[0].theme.mainColor)
             VStack {
-//                TitleView(topic: "The Great Wall")
-//                    .padding(.top, 8)
                 MeetingHeaderView(secondsElapsed: speakingTimer.secondsElapsed, secondsRemaining: speakingTimer.secondsRemaining, theme: englishPracticeTopics[0].theme)
                     .padding(.bottom, 16)
                 ReadingPracticeView(textToRead: englishPracticeTopics[0].topicContent, isRecording: $isRecording, playAction:{isPlaying in 
@@ -186,7 +184,14 @@ struct SpeakingTestMainView: View {
             NewTopicSheet(topics: $englishPracticeTopics, isPresentingNewScrumView: $addingNewTopic)
         }
         .sheet(isPresented: $showingFeedback) {
-            PronunciationFeedbackView(score: 80, feedback: ["The Great Wall of China, ", "a marvel of engineering stretching over"], isPresentingView: $showingFeedback)
+            if let feedback = englishPracticeTopics[0].recordeHistory[0].feedback {
+                PronunciationFeedbackView(
+                    feedback: feedback,
+                    isPresentingView: .constant(true)
+                )
+            } else {
+                
+            } 
         }
         }
         .onDisappear {
@@ -239,10 +244,20 @@ struct SpeakingTestMainView: View {
     private func uploadRecording() {
         // ... 上传录音的逻辑
         recordingState = .uploading
-        // 假设上传是一个异步的过程，这里是模拟上传完成后的回调
-        DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-            recordingState = .uploaded
-            showingFeedback = true
+        let manager = PronunciationFeedbackManager()
+        manager.postFeedback(original: englishPracticeTopics[0].topicContent, recognized: speechRecognizer.transcript) { result in
+            switch result {
+            case .success(let feedbackItems):
+                if let _ = englishPracticeTopics.first?.recordeHistory.first {
+                    englishPracticeTopics[0].recordeHistory[0].feedback = feedbackItems
+                    recordingState = .uploaded
+                    showingFeedback = true
+                } else {
+                    print("get feedback failure, englishPracticeTopics do not have data")
+                }
+            case .failure(let failure):
+                print("get feedback failure: ", failure)
+            }
         }
     }
     

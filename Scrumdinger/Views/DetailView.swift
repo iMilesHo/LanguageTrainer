@@ -49,7 +49,7 @@ struct DetailView: View {
                     Label("No meetings yet", systemImage: "calendar.badge.exclamationmark")
                 }
                 ForEach(topic.recordeHistory) { history in
-                    NavigationLink(destination: RecordingHistoryView(history: history)) {
+                    NavigationLink(destination: RecordingHistoryView(history: history, topic: topic.topic)) {
                         HStack {
                             Image(systemName: "calendar")
                             Text(history.date, style: .date)

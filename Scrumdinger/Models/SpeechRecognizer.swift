@@ -96,6 +96,7 @@ actor SpeechRecognizer: ObservableObject {
         
         do {
             let (audioEngine, request, audioFile) = try Self.prepareEngine()
+            request.addsPunctuation = true
             self.audioEngine = audioEngine
             self.request = request
             self.audioFile = audioFile

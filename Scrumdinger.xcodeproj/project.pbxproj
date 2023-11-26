@@ -44,6 +44,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		924977FC2B130D2100670C4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		92CB28092B041DD80099C645 /* PronunciationFeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PronunciationFeedbackView.swift; sourceTree = "<group>"; };
 		92DB45EC2B0ADA630059E16F /* thegreatwallAudio.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = thegreatwallAudio.mp3; sourceTree = "<group>"; };
 		92DB45F72B0ADACF0059E16F /* thegreatwallAudio.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = thegreatwallAudio.wav; sourceTree = "<group>"; };
@@ -181,6 +182,7 @@
 		AAAE801E294793AB0099DABC /* Scrumdinger */ = {
 			isa = PBXGroup;
 			children = (
+				924977FC2B130D2100670C4F /* Info.plist */,
 				92FD9A5D2AF48BBB007B1776 /* EnglishPracticeModel */,
 				92FD9A5A2AF40C37007B1776 /* SpeakingTestView */,
 				A9789BAC2947DE3900305A2F /* Models */,
@@ -444,6 +446,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Scrumdinger/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Scrumdinger/Info.plist;
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Audio is recorded to transcribe the meeting. Audio recordings are discarded after transcription.";
 				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "You can view a text transcription of your meeting in the app.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
@@ -475,6 +478,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"Scrumdinger/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = Scrumdinger/Info.plist;
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = "Audio is recorded to transcribe the meeting. Audio recordings are discarded after transcription.";
 				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "You can view a text transcription of your meeting in the app.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
