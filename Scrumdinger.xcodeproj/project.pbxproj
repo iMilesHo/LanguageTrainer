@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		923EE5BB2B166F3100FD9531 /* flyingcat.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 923EE5BA2B166F3100FD9531 /* flyingcat.mp3 */; };
 		92CB280A2B041DD80099C645 /* PronunciationFeedbackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 92CB28092B041DD80099C645 /* PronunciationFeedbackView.swift */; };
 		92DB45ED2B0ADA630059E16F /* thegreatwallAudio.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 92DB45EC2B0ADA630059E16F /* thegreatwallAudio.mp3 */; };
 		92DB45F82B0ADACF0059E16F /* thegreatwallAudio.wav in Resources */ = {isa = PBXBuildFile; fileRef = 92DB45F72B0ADACF0059E16F /* thegreatwallAudio.wav */; };
@@ -44,6 +45,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		923EE5BA2B166F3100FD9531 /* flyingcat.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = flyingcat.mp3; sourceTree = "<group>"; };
 		924977FC2B130D2100670C4F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		92CB28092B041DD80099C645 /* PronunciationFeedbackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PronunciationFeedbackView.swift; sourceTree = "<group>"; };
 		92DB45EC2B0ADA630059E16F /* thegreatwallAudio.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = thegreatwallAudio.mp3; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 		AA313BB429B69EDC00F4309A /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				923EE5BA2B166F3100FD9531 /* flyingcat.mp3 */,
 				92DB45F72B0ADACF0059E16F /* thegreatwallAudio.wav */,
 				92DB45EC2B0ADA630059E16F /* thegreatwallAudio.mp3 */,
 				AA313BB529B69F0A00F4309A /* ding.wav */,
@@ -274,6 +277,7 @@
 				AAAE8031294795050099DABC /* SampleCode.xcconfig in Resources */,
 				AA313BB629B69F0A00F4309A /* ding.wav in Resources */,
 				92DB45ED2B0ADA630059E16F /* thegreatwallAudio.mp3 in Resources */,
+				923EE5BB2B166F3100FD9531 /* flyingcat.mp3 in Resources */,
 				AAAE8024294793AB0099DABC /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -444,6 +448,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Scrumdinger/Preview Content\"";
+				DEVELOPMENT_TEAM = 6GM672M563;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Scrumdinger/Info.plist;
@@ -476,6 +481,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"Scrumdinger/Preview Content\"";
+				DEVELOPMENT_TEAM = 6GM672M563;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Scrumdinger/Info.plist;

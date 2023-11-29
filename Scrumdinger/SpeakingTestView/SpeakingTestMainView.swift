@@ -245,6 +245,7 @@ struct SpeakingTestMainView: View {
         // ... 上传录音的逻辑
         recordingState = .uploading
         let manager = PronunciationFeedbackManager()
+        
         manager.postFeedback(original: englishPracticeTopics[0].topicContent, recognized: speechRecognizer.transcript) { result in
             switch result {
             case .success(let feedbackItems):
@@ -284,7 +285,7 @@ struct SpeakingTestMainView: View {
             let fullPath = modelAudioFilePath.appendingPathComponent(modelAudioFileName)
             
             // TODO: model audio test
-            guard let url = Bundle.main.url(forResource: "thegreatwallAudio", withExtension: "mp3") else { fatalError("Failed to find sound file.") }
+            guard let url = Bundle.main.url(forResource: "flyingcat", withExtension: "mp3") else { fatalError("Failed to find sound file.") }
             audioPlayer = try AVAudioPlayer(contentsOf: url)
             audioPlayer?.play()
         } catch {
