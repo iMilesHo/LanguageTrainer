@@ -15,4 +15,3 @@ To get started with Pitch Trainer, clone the repository and follow the setup ins
 
 ```bash
 git clone https://github.com/iMilesHo/PitchTrainer.git
-# Add setup instructions here
