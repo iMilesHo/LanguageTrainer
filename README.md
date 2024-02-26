@@ -1,7 +1,7 @@
-# Pitch Trainer
+# Language Trainer
 
 ## Introduction
-Pitch Trainer is an innovative app designed to help users improve their language skills, particularly in pronunciation and speech recognition. This app is ideal for language learners, educators, and anyone interested in enhancing their linguistic abilities.
+Language Trainer is an innovative app designed to help users improve their language skills, particularly in pronunciation and speech recognition. This app is ideal for language learners, educators, and anyone interested in enhancing their linguistic abilities.
 
 ## Features
 - **Interactive Speaking Tests**: Engage in speaking tests that provide real-time feedback on pronunciation and fluency.
