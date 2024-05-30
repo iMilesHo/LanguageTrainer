@@ -26,4 +26,4 @@ Language Trainer is an innovative app designed to help users improve their langu
 
 ## Contributors
 
-This is iOS app is independently developed by Lyle He.
+Lyle He independently developed this iOS app.
